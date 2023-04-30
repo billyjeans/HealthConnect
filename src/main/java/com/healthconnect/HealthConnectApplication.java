@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class HealthConnectApplication {
-
+// this is the start class
     public static void main(String[] args) {
         SpringApplication.run(HealthConnectApplication.class, args);
     }
