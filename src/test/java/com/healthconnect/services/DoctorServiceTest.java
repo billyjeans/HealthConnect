@@ -32,7 +32,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
-public class DoctorServiceImplTest {
+public class DoctorServiceTest {
 
     @Mock
     private DoctorRepository doctorRepository;
