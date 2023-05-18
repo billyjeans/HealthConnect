@@ -33,9 +33,13 @@ pipeline {
             
 
             steps {
-                sh """
                 echo "Running Unit Tests"
-                """
+
+                        // Set up the environment
+                        sh 'mvn clean install'
+
+                        // Run JUnit tests
+                        sh 'mvn test'
             }
         }
 
