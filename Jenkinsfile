@@ -52,7 +52,7 @@ pipeline {
 
         stage('Build Deploy Code') {
             when {
-                branch 'dev4254'
+                branch 'main'
             }
             steps {
                 sh """
