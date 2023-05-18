@@ -41,7 +41,7 @@ public class DoctorService {
 
         return doctorRepository.save(updatedDoctor);
     }
-
+// this is delete method for doctor
     public void deleteDoctor(Long id) {
         if (!doctorRepository.existsById(id)) {
             throw new EntityNotFoundException("Doctor not found for id: " + id);
