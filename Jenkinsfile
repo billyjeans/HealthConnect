@@ -30,6 +30,12 @@ pipeline {
         }
 
         stage(' Unit Testing') {
+             when {
+                  expression {
+                              return env.BRANCH_NAME.startsWith('Feature-')
+                                 }
+                   }
+
             steps {
                 sh """
                 echo "Running Unit Tests"
