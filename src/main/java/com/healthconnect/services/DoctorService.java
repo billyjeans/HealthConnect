@@ -10,43 +10,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class DoctorService {
-    private final DoctorRepository doctorRepository;
-
-    public DoctorService(DoctorRepository doctorRepository) {
-        this.doctorRepository = doctorRepository;
-    }
-
-    public List<Doctor> getAllDoctors() {
-        return doctorRepository.findAll();
-    }
-
-    public Optional<Doctor> getDoctorById(Long id) {
-        return doctorRepository.findById(id);
-    }
-
-    public Doctor createDoctor(Doctor doctor) {
-        return doctorRepository.save(doctor);
-    }
-
-    public Doctor updateDoctor(Long id, DoctorDTO doctorDto) {
-        Doctor doctorToUpdate = doctorRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Doctor not found with id " + id));
-
-        Doctor updatedDoctor = Doctor.builder()
-                .doctorId(doctorToUpdate.getDoctorId())
-                .firstName(doctorDto.getName() != null ? doctorDto.getName() : doctorToUpdate.getFirstName())
-                .specialization(doctorDto.getSpecialization() != null ? doctorDto.getSpecialization() : doctorToUpdate.getSpecialization())
-                .build();
-
-        return doctorRepository.save(updatedDoctor);
-    }
-// this is delete method for doctor
-    public void deleteDoctor(Long id) {
-        if (!doctorRepository.existsById(id)) {
-            throw new EntityNotFoundException("Doctor not found for id: " + id);
-        }
-        doctorRepository.deleteById(id);
-    }
+public interface DoctorService {
+    Optional<DoctorDTO> getDoctorById(Long id);
+    List<DoctorDTO> getAllDoctors();
+    DoctorDTO createDoctor(DoctorDTO doctorDTO);
+    DoctorDTO updateDoctor(Long id, DoctorDTO doctorDTO);
+    boolean deleteDoctor(Long id);
 }
 
