@@ -28,15 +28,14 @@ pipeline {
                 ])
             }
         }
-        stage('Unit Testing') {
-            agent {
+    
+        stage(' Unit Testing') {
+             agent {
                 docker {
                         image 'maven:3.8.4' // Specify the desired Maven version or tag
-                        args '-v /path/to/your/project:/workspace' // Mount your project directory to the container workspace
-        }
-    }
-        stage(' Unit Testing') {
-            
+
+                        }
+                 }
 
            steps {
                 echo "Running Unit Tests"
