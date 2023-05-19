@@ -24,11 +24,17 @@ pipeline {
                 checkout([
                     $class: 'GitSCM',
                     branches: [[name: '*/main']],
-                    userRemoteConfigs: [[url: 'https://github.com/billyjeans/HealthConnect']]
+                    userRemoteConfigs: [[url: 'https://gitlab.com/billyjeans/HealthConnect']]
                 ])
             }
         }
-
+        stage('Unit Testing') {
+            agent {
+                docker {
+                        image 'maven:3.8.4' // Specify the desired Maven version or tag
+                        args '-v /path/to/your/project:/workspace' // Mount your project directory to the container workspace
+        }
+    }
         stage(' Unit Testing') {
             
 
