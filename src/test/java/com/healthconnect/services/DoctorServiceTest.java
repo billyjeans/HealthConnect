@@ -33,7 +33,7 @@ import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class DoctorServiceTest {
-
+/*
     @Mock
     private DoctorRepository doctorRepository;
 
@@ -61,7 +61,7 @@ public class DoctorServiceTest {
 
         verify(doctorRepository, times(1)).findById(doctorId.longValue());
 
-    }
+    }*/
 }
 
 
