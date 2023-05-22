@@ -30,13 +30,6 @@ pipeline {
         }
     
         stage(' Unit Testing') {
-             agent {
-                docker {
-                        image 'maven:3.8.4' // Specify the desired Maven version or tag
-
-                        }
-                 }
-
            steps {
                 echo "Running Unit Tests"
 
