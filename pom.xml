@@ -123,7 +123,22 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version> <!-- Update this version to a version that supports Java 17 -->
+                <configuration>
+                    <source>17</source> <!-- Set the source version to 17 -->
+                    <target>17</target> <!-- Set the target version to 17 -->
+                    <compilerArgs>
+                        <arg>--release</arg>
+                        <arg>17</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
+
 
 </project>
