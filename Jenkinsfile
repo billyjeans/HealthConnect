@@ -2,9 +2,9 @@ pipeline {
    agent any
 
    tools {
-   maven 'Maven 3.8.6'
-   jdk 'Java 16'
-      jdk 'Java 17.0.4.1'
+     maven 'Maven 3.8.6'
+     jdk 'Java 17.0.4.1'
+    jdk 'Java 16'
    }
 
     stages {
@@ -17,12 +17,7 @@ pipeline {
              }
             steps {
                 sh """
-                echo Java home is $JAVA_HOME
-                echo PATH is $PATH
-                echo Java path \$(which java)
-                echo Java version is \$(java --version)
-                echo Maven version is \$(mvn --version)
-                echo "Cleaned Up Workspace For Project"
+                printenv
                 """
             }
         }
