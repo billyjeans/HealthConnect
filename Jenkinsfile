@@ -12,20 +12,19 @@ pipeline {
   // PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
  //  }
 
- environment {
-         JAVA_HOME = "${tool 'Java 16'}"
-         PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
-     }
+
     options {
         buildDiscarder logRotator(
                     daysToKeepStr: '16',
                     numToKeepStr: '10'
             )
     }
-
     stages {
-
         stage('Cleanup Workspace') {
+        environment {
+                 JAVA_HOME = "${tool 'Java 16'}"
+                 PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
+             }
             steps {
                 cleanWs()
                 sh """
