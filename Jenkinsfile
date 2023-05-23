@@ -1,13 +1,14 @@
 pipeline {
    agent any
 
-   tools {
-   maven 'Maven 3.8.6'
-   jdk 'Java 16'
-   }
-   jdk = tool name: 'Java 16'
-   env.JAVA_HOME = "${jdk}"
-   echo "jdk installation path is: ${jdk}"
+  tools {
+          maven 'Maven 3.8.6'
+          jdk 'Java 16'
+      }
+
+      environment {
+          JDK_HOME = "${tool 'Java 16'}"
+      }
     options {
         buildDiscarder logRotator(
                     daysToKeepStr: '16',
