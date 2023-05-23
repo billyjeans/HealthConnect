@@ -9,7 +9,7 @@ pipeline {
 
    environment {
    JAVA_HOME = "${tool name: 'Java 16', type: 'jdk'}"
-   PATH = "${env.JAVA_HOME}:${env.PATH}"
+   PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
    }
     options {
         buildDiscarder logRotator(
