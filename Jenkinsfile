@@ -6,29 +6,16 @@ pipeline {
    jdk 'Java 16'
    }
 
-
-//   environment {
-  // JAVA_HOME = "${tool name: 'Java 16', type: 'jdk'}"
-  // PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
- //  }
-
-
-    options {
-        buildDiscarder logRotator(
-                    daysToKeepStr: '16',
-                    numToKeepStr: '10'
-            )
-    }
     stages {
+
         stage('Cleanup Workspace') {
-        environment {
+         environment {
                  JAVA_HOME = "${tool 'Java 16'}"
                  PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
              }
             steps {
                 cleanWs()
                 sh """
-                echo Java home is $JAVA_HOME
                 echo Java home is $JAVA_HOME
                 echo PATH is $PATH
                 echo Java path \$(which java)
