@@ -24,7 +24,7 @@ pipeline {
             steps {
                 cleanWs()
                 sh """
-                export JAVA_HOME = "${tool name: 'Java 16', type}"
+                export JAVA_HOME = $JAVA_HOME
                 echo Java home is $JAVA_HOME
                 echo PATH is $PATH
                 echo Java path \$(which java)
