@@ -11,7 +11,7 @@ pipeline {
 
         stage('Cleanup Workspace') {
          environment {
-                 JAVA_HOME = "${tool 'Java 17.0.4.1'}"
+                 JAVA_HOME = "${tool 'Java 16'}"
                  PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
              }
             steps {
