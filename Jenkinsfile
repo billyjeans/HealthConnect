@@ -25,6 +25,8 @@ pipeline {
                 cleanWs()
                 sh """
                 echo Java home is $JAVA_HOME
+                echo Java version is $(java --version)
+                echo Maven version is $(mvn --version)
                 echo "Cleaned Up Workspace For Project"
                 """
             }
