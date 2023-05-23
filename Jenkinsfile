@@ -7,10 +7,10 @@ pipeline {
    }
 
 
-//   environment {
-//   JAVA_HOME = "${tool name: 'Java 16', type: 'jdk'}"
-//   PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
-//   }
+   environment {
+   JAVA_HOME = "${tool name: 'Java 16', type: 'jdk'}"
+   PATH = "${env.PATH}:${env.JAVA_HOME}/bin"
+   }
     options {
         buildDiscarder logRotator(
                     daysToKeepStr: '16',
