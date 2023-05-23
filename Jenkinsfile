@@ -5,12 +5,12 @@ pipeline {
    maven 'Maven 3.8.6'
    jdk 'Java 16'
    }
-environment {
-        JDK_HOME = "${tool 'Java 16'}"
-        JAVA_HOME = "${env.JDK_HOME}"
-    }
 
 
+   environment {
+   JAVA_HOME = "${tool name: 'Java 16', type: 'jdk'}"
+   PATH = "${env.JAVA_HOME}:${env.PATH}"
+   }
     options {
         buildDiscarder logRotator(
                     daysToKeepStr: '16',
