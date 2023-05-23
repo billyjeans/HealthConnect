@@ -15,7 +15,6 @@ pipeline {
                  PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
              }
             steps {
-                cleanWs()
                 sh """
                 echo Java home is $JAVA_HOME
                 echo PATH is $PATH
