@@ -10,11 +10,10 @@ pipeline {
     stages {
 
         stage('Cleanup Workspace') {
-         environment {
-                 JAVA_HOME = "/hasi/bongo/fizz/buzz"
-      //           JAVA_HOME = "${tool 'Java 16'}"
-                // PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
-             }
+
+   tools {
+     jdk 'Java 17.0.4.1'
+   }
             steps {
                 sh """
                 printenv
