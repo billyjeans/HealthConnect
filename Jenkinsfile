@@ -4,13 +4,14 @@ pipeline {
    tools {
    maven 'Maven 3.8.6'
    jdk 'Java 16'
+      jdk 'Java 17.0.4.1'
    }
 
     stages {
 
         stage('Cleanup Workspace') {
          environment {
-                 JAVA_HOME = "${tool 'Java 16'}"
+                 JAVA_HOME = "${tool 'Java 17.0.4.1'}"
                  PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
              }
             steps {
