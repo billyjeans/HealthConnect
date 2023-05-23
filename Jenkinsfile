@@ -1,6 +1,8 @@
 pipeline {
-
    agent any
+   environment {
+JAVA_HOME = "${tool 'Java 16'}"
+}
    tools {
    maven 'Maven 3.8.6'
    jdk 'Java 16'
