@@ -18,7 +18,9 @@ pipeline {
                 sh """
                 printenv
                 which java
+                which java
                 java --version
+                which java
                 mvn --version
                 """
             }
