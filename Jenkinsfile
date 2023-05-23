@@ -11,6 +11,11 @@ pipeline {
   // JAVA_HOME = "${tool name: 'Java 16', type: 'jdk'}"
   // PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
  //  }
+
+ environment {
+         JAVA_HOME = "${tool 'Java 16'}"
+         PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
+     }
     options {
         buildDiscarder logRotator(
                     daysToKeepStr: '16',
@@ -24,7 +29,6 @@ pipeline {
             steps {
                 cleanWs()
                 sh """
-                export JAVA_HOME = echo $JAVA_HOME
                 echo Java home is $JAVA_HOME
                 echo PATH is $PATH
                 echo Java path \$(which java)
