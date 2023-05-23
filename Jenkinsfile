@@ -23,6 +23,7 @@ pipeline {
             steps {
                 cleanWs()
                 sh """
+                echo Java home is $JAVA_HOME
                 echo "Cleaned Up Workspace For Project"
                 """
             }
