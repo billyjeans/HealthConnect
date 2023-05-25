@@ -27,27 +27,27 @@ pipeline {
             }
         }
 
-//         stage('Code Checkout') {
-//             steps {
-//                 checkout([
-//                     $class: 'GitSCM',
-//                     branches: [[name: '*/main']],
-//                     userRemoteConfigs: [[url: 'https://gitlab.com/billyjeans/HealthConnect']]
-//                 ])
-//             }
-//         }
-//
-//         stage(' Unit Testing') {
-//            steps {
-//                 echo "Running Unit Tests"
-//
-//                         // Set up the environment
-//                         sh 'mvn clean install'
-//
-//                         // Run JUnit tests
-//                         sh 'mvn test'
-//             }
-//         }
+        stage('Code Checkout') {
+            steps {
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/main']],
+                    userRemoteConfigs: [[url: 'https://gitlab.com/billyjeans/HealthConnect']]
+                ])
+            }
+        }
+
+        stage(' Unit Testing') {
+           steps {
+                echo "Running Unit Tests"
+
+                        // Set up the environment
+                        sh 'mvn clean install'
+
+                        // Run JUnit tests
+                        sh 'mvn test'
+            }
+        }
 //
 //         stage('Code Analysis') {
 //             steps {
