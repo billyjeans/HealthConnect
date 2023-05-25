@@ -33,7 +33,7 @@ import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class DoctorServiceTest {
-
+// making a commint to test dev-2001 merge reqwuest
 //    @Mock
 //    private DoctorRepository doctorRepository;
 //
