@@ -1,15 +1,15 @@
-package com.healthconnect.services;
+package com.healthconnect.services.impl;
 
 import com.healthconnect.model.Doctor;
 import com.healthconnect.model.dto.DoctorDTO;
 import com.healthconnect.repositories.DoctorRepository;
-import jakarta.persistence.EntityNotFoundException;
+import com.healthconnect.services.IDoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Optional;
 
-public class DoctorServiceImpl implements DoctorService {
+public class DoctorServiceImpl implements IDoctorService {
 
     // this is a commit to check if jenkins pipeline scans correctly
         private final DoctorRepository doctorRepository;

@@ -1,4 +1,4 @@
-package com.healthconnect.services;
+package com.healthconnect.services.impl;
 
 import com.healthconnect.model.Doctor;
 import com.healthconnect.model.dto.DoctorDTO;
