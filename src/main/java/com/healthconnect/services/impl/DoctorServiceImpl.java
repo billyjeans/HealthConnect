@@ -3,7 +3,6 @@ package com.healthconnect.services.impl;
 import com.healthconnect.model.Doctor;
 import com.healthconnect.model.dto.DoctorDTO;
 import com.healthconnect.repositories.DoctorRepository;
-import com.healthconnect.services.DoctorMapper;
 import com.healthconnect.services.IDoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 
