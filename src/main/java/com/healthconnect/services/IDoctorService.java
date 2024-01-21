@@ -1,16 +1,13 @@
 package com.healthconnect.services;
 
-import com.healthconnect.model.Doctor;
 import com.healthconnect.model.dto.DoctorDTO;
-import com.healthconnect.repositories.DoctorRepository;
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public interface DoctorService {
+public interface IDoctorService {
     Optional<DoctorDTO> getDoctorById(Long id);
     List<DoctorDTO> getAllDoctors();
     DoctorDTO createDoctor(DoctorDTO doctorDTO);
