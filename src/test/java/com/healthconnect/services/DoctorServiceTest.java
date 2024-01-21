@@ -34,34 +34,34 @@ import static org.mockito.Mockito.*;
 @RunWith(MockitoJUnitRunner.class)
 public class DoctorServiceTest {
 // testing merge request comment
-//    @Mock
-//    private DoctorRepository doctorRepository;
-//
-//    @InjectMocks
-//    private DoctorServiceImpl doctorService;
-//
-//    @BeforeEach
-//    public void setup() {
-//        MockitoAnnotations.openMocks(this);
-//    }
-//
-//    @Test
-//    public void testGetDoctorById() {
-//        Integer doctorId = 1;
-//        Doctor doctor = new Doctor();
-//        doctor.setDoctorId(doctorId);
-//        doctor.setFirstName("John Doe");
-//        doctor.setSpecialization("Cardiology");
-//
-//        when(doctorRepository.findById(doctorId.longValue())).thenReturn(Optional.of(doctor));
-//
-//        DoctorDTO result = doctorService.getDoctorById(doctorId.longValue()).get();
-//
-//        assertEquals(doctorId, result.getId().intValue());
-//
-//        verify(doctorRepository, times(1)).findById(doctorId.longValue());
-//
-//    }
+    @Mock
+    private DoctorRepository doctorRepository;
+
+    @InjectMocks
+    private DoctorServiceImpl doctorService;
+
+    @BeforeEach
+    public void setup() {
+        MockitoAnnotations.openMocks(this);
+    }
+
+    @Test
+    public void testGetDoctorById() {
+        Integer doctorId = 1;
+        Doctor doctor = new Doctor();
+        doctor.setDoctorId(doctorId);
+        doctor.setFirstName("John Doe");
+        doctor.setSpecialization("Cardiology");
+
+        when(doctorRepository.findById(doctorId.longValue())).thenReturn(Optional.of(doctor));
+
+        DoctorDTO result = doctorService.getDoctorById(doctorId.longValue()).get();
+
+        assertEquals(doctorId, result.getId().intValue());
+
+        verify(doctorRepository, times(1)).findById(doctorId.longValue());
+
+    }
 }
 
 

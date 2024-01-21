@@ -1,0 +1,65 @@
+version: '2.0'
+
+services:
+  gitlab:
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    hostname: "10.21.21.10"
+    image: gitlab/gitlab-ce:15.9.2-ce.0
+    container_name: gitlab
+    mem_limit: 14336M
+    restart: always
+    networks:
+      - amovanet
+    environment:
+      - GITLAB_ROOT_EMAIL=root@local
+      - GITLAB_ROOT_PASSWORD="lcl@amdin"
+    ports:
+      - '80:80'
+      - '443:443'
+      - '2224:22'
+    volumes:
+      - gitlab_data_etc:/etc/gitlab
+      - gitlab_data_opt:/var/opt/gitlab
+      # - /etc/localtime:/etc/localtime:ro
+  jenkins:
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    mem_limit: 14336M
+    restart: always
+    networks:
+      - amovanet
+    environment:
+      - GITLAB_ROOT_EMAIL="root@local"
+      - GITLAB_ROOT_PASSWORD="bongo@hasis!"
+    ports:
+      - '8090:8080'
+      - '50000:50000'
+    volumes:
+      - jenkins_data:/var/jenkins_home
+
+networks:
+  amovanet:
+    driver: bridge
+
+volumes:
+  gitlab_data_etc:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/gitlab/etc'
+  gitlab_data_opt:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/gitlab/opt'
+  jenkins_data:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/jenkins/data'
