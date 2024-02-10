@@ -2,17 +2,22 @@ package com.healthconnect.services.impl;
 
 import com.healthconnect.model.Appointment;
 import com.healthconnect.repositories.AppointmentRepository;
+import com.healthconnect.services.IAppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
-public class AppointmentService {
+
+public class AppointmentServiceImpl implements IAppointmentService {
+
+    private final AppointmentRepository appointmentRepository;
 
     @Autowired
-    private AppointmentRepository appointmentRepository;
+    public AppointmentServiceImpl(AppointmentRepository appointmentRepository) {
+        this.appointmentRepository = appointmentRepository;
+    }
 
 //    @Autowired
 //    private NotificationService notificationService;
