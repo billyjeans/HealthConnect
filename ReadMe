@@ -1,6 +1,6 @@
 Healthcare Management System using Java Spring, Spring Integration, PostgreSQL, and JDBC API, with deployment on the Azure platform Key Features:
 
-**Patient Record Management**: The system should allow healthcare providers to create, manage, and update patient records, including personal information, medical history, prescriptions, and test results. Java Spring can be used to create the back-end services for handling patient data, and PostgreSQL can be used as the database to store patient records.
+**Patient Record Management** The system should allow healthcare providers to create, manage, and update patient records, including personal information, medical history, prescriptions, and test results. Java Spring can be used to create the back-end services for handling patient data, and PostgreSQL can be used as the database to store patient records.
 
 Appointment Scheduling: The system should allow healthcare providers to schedule and manage appointments for patients, including setting up appointments, sending notifications, and handling cancellations or rescheduling. Java Spring can be used to create the appointment scheduling logic, while Spring Integration can be utilized to integrate with external calendar systems or notification services.
 
