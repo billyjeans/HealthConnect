@@ -11,7 +11,7 @@ import java.util.Optional;
 
 public class DoctorServiceImpl implements IDoctorService {
 
-    // this is a commit to check if jenkins pipeline scans correctly
+    // this is a commit to check if a jenkins pipeline scans correctly
         private final DoctorRepository doctorRepository;
 
         @Autowired

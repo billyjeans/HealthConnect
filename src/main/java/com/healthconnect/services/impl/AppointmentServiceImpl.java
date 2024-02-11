@@ -4,7 +4,6 @@ import com.healthconnect.model.Appointment;
 import com.healthconnect.repositories.AppointmentRepository;
 import com.healthconnect.services.IAppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;

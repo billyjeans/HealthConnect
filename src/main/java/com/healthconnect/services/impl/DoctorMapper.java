@@ -4,7 +4,6 @@ import com.healthconnect.model.Doctor;
 import com.healthconnect.model.dto.DoctorDTO;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class DoctorMapper {
 
@@ -23,7 +22,7 @@ public class DoctorMapper {
         public static List<DoctorDTO> toDTOList(List<Doctor> doctors) {
             return doctors.stream()
                     .map(DoctorMapper::toDTO)
-                    .collect(Collectors.toList());
+                    .toList();
         }
 
         public static Doctor toEntity(DoctorDTO dto) {
